@@ -1,0 +1,12 @@
+import React from 'react';
+import AdminLayout from "./components/AdminLayout.jsx";
+
+////////////////////////////////////////////////////////////
+// 注释
+////////////////////////////////////////////////////////////
+const App = () => {
+  return <AdminLayout/>;
+};
+
+export default App;
+
