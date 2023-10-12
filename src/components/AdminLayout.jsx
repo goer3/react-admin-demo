@@ -17,7 +17,7 @@ import {
 import { Avatar, Dropdown, Layout, Menu, Space } from 'antd';
 import React, { useState } from 'react';
 // import CodingLogo from '../../assets/images/coding-logo.svg';
-import Logo from '../assets/images/logo.png';
+import Logo from '../assets/images/logo.svg';
 import './AdminLayout.css';
 const { Header, Footer, Sider, Content } = Layout;
 
