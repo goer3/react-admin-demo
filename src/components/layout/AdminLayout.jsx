@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   AlertOutlined,
   ApiOutlined,
@@ -15,12 +16,11 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import { Avatar, Dropdown, Layout, Menu, Space } from 'antd';
-import React, { useState } from 'react';
-// import CodingLogo from '../../assets/images/coding-logo.svg';
-import Logo from '../assets/images/logo.svg';
+import { DefaultAvatar, Logo } from '../../utils/resources.jsx';
 import './AdminLayout.css';
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout;
 
+// 生成菜单结构
 function getItem(label, key, icon, children, type) {
   return {
     key,
@@ -31,6 +31,7 @@ function getItem(label, key, icon, children, type) {
   };
 }
 
+// 菜单数据
 const menus = [
   getItem('工作空间', '1', <HomeOutlined />),
   getItem('流程审批', '100', <AuditOutlined />, [
@@ -95,7 +96,7 @@ const menus = [
   getItem('获取帮助', '9999', <FileProtectOutlined />),
 ];
 
-// 只能使用这个变量名称
+// 下拉菜单，只能使用这个变量名称，不然会报错
 const items = [
   {
     key: '1',
@@ -124,11 +125,14 @@ const items = [
   },
 ];
 
+// Layout
 const AdminLayout = () => {
+  // 点击切换菜单
   const onClick = (e) => {
     console.log('click ', e);
   };
 
+  // 菜单状态
   const [collapsed, setCollapsed] = useState(false);
   return (
     <>
@@ -144,10 +148,7 @@ const AdminLayout = () => {
               }}>
               <a onClick={(e) => e.preventDefault()}>
                 <Space>
-                  <Avatar
-                    className="admin-avatar"
-                    src="https://tse3-mm.cn.bing.net/th/id/OIP-C.ZajtkkT_I2qt_EXCwhbthQAAAA?pid=ImgDet&rs=1"
-                  />
+                  <Avatar className="admin-avatar" src={DefaultAvatar} />
                   {/* <span style={{ marginRight: 10 }}>Jayce Kuang</span> */}
                   <i className="admin-dropdown-icon"></i>
                 </Space>
@@ -179,4 +180,5 @@ const AdminLayout = () => {
     </>
   );
 };
+
 export default AdminLayout;
