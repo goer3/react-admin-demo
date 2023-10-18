@@ -1,11 +1,13 @@
 import React from 'react';
-import AdminLayout from './components/layout/AdminLayout.jsx';
+import { BrowserRouter } from 'react-router-dom';
+import RouteList from './router/Router.jsx';
 
-////////////////////////////////////////////////////////////
-// 注释
-////////////////////////////////////////////////////////////
 const App = () => {
-  return <AdminLayout />;
+  return (
+    <BrowserRouter>
+      <RouteList />
+    </BrowserRouter>
+  );
 };
 
 export default App;

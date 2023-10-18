@@ -16,8 +16,10 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import { Avatar, Dropdown, Layout, Menu, Space } from 'antd';
-import { DefaultAvatar, Logo } from '../../utils/resources.jsx';
+import { DefaultAvatar, Logo } from '../../utils/Resources.jsx';
 import './AdminLayout.css';
+import { Outlet, useNavigate } from 'react-router';
+
 const { Header, Sider, Content } = Layout;
 
 // 生成菜单结构
@@ -33,7 +35,7 @@ function getItem(label, key, icon, children, type) {
 
 // 菜单数据
 const menus = [
-  getItem('工作空间', '1', <HomeOutlined />),
+  getItem('工作空间', '/dashboard', <HomeOutlined />),
   getItem('流程审批', '100', <AuditOutlined />, [
     getItem('流程创建', '101'),
     getItem('流程列表', '102'),
@@ -75,16 +77,16 @@ const menus = [
     getItem('项目列表', '611'),
     getItem('应用列表', '612'),
   ]),
-  getItem('用户管理', '700', <TeamOutlined />, [
-    getItem('部门列表', '701'),
-    getItem('用户列表', '702'),
-    getItem('用户分组', '703'),
+  getItem('用户中心', '/users', <TeamOutlined />, [
+    getItem('部门管理', '/users/department'),
+    getItem('用户管理', '/users/user'),
+    getItem('分组管理', '/users/group'),
+    getItem('角色管理', '/users/role'),
   ]),
-  getItem('系统管理', '1000', <SettingOutlined />, [
-    getItem('菜单管理', '1004'),
-    getItem('接口管理', '1005'),
-    getItem('角色管理', '1006'),
-    getItem('基础配置', '1007'),
+  getItem('系统配置', '/system', <SettingOutlined />, [
+    getItem('菜单管理', '/system/menu'),
+    getItem('接口管理', '/system/api'),
+    getItem('服务配置', '/system/setting'),
   ]),
   getItem('日志审计', '2000', <InsuranceOutlined />, [
     getItem('操作日志', '2001'),
@@ -92,8 +94,8 @@ const menus = [
     getItem('改密日志', '2003'),
     getItem('机器日志', '2004'),
   ]),
-  getItem('个人中心', '3000', <UserOutlined />),
-  getItem('获取帮助', '9999', <FileProtectOutlined />),
+  getItem('个人中心', '/users/center', <UserOutlined />),
+  getItem('获取帮助', '/help', <FileProtectOutlined />),
 ];
 
 // 下拉菜单，只能使用这个变量名称，不然会报错
@@ -127,11 +129,8 @@ const items = [
 
 // Layout
 const AdminLayout = () => {
-  // 点击切换菜单
-  const onClick = (e) => {
-    console.log('click ', e);
-  };
-
+  // 路由跳转
+  const navigate = useNavigate();
   // 菜单状态
   const [collapsed, setCollapsed] = useState(false);
   return (
@@ -165,15 +164,20 @@ const AdminLayout = () => {
             onCollapse={(value) => setCollapsed(value)}>
             <Menu
               className="admin-sider-menu"
-              onClick={onClick}
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
               mode="inline"
               items={menus}
+              onClick={({ key }) => {
+                console.log(key);
+                navigate(key); // 路由跳转
+              }}
             />
           </Sider>
           <Layout>
-            <Content className="admin-content">Content</Content>
+            <Content className="admin-content">
+              <Outlet />
+            </Content>
           </Layout>
         </Layout>
       </Layout>
