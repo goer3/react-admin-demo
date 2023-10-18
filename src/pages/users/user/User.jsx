@@ -1,8 +1,8 @@
 import React from 'react';
 
 // 用户列表
-const UserList = () => {
+const User = () => {
   return <>UserList</>;
 };
 
-export default UserList;
+export default User;

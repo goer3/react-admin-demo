@@ -1,8 +1,8 @@
 import React from 'react';
 
 // 部门管理
-const DepartmentList = () => {
+const Department = () => {
   return <>DepartmentList</>;
 };
 
-export default DepartmentList;
+export default Department;

@@ -1,8 +1,8 @@
 import React from 'react';
 
 // 角色列表
-const RoleList = () => {
+const Role = () => {
   return <>RoleList</>;
 };
 
-export default RoleList;
+export default Role;

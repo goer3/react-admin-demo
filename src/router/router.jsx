@@ -24,21 +24,21 @@ export const RouteData = [
         children: [
           {
             path: 'user', // 用户管理
-            element: LazyLoad(React.lazy(() => import('/src/pages/users/user/UserList.jsx'))),
+            element: LazyLoad(React.lazy(() => import('/src/pages/users/user/User.jsx'))),
           },
           {
             path: 'department', // 部门管理
             element: LazyLoad(
-              React.lazy(() => import('/src/pages/users/department/DepartmentList.jsx')),
+              React.lazy(() => import('/src/pages/users/department/Department.jsx')),
             ),
           },
           {
             path: 'group', // 分组管理
-            element: LazyLoad(React.lazy(() => import('/src/pages/users/group/UserGroupList.jsx'))),
+            element: LazyLoad(React.lazy(() => import('/src/pages/users/group/UserGroup.jsx'))),
           },
           {
             path: 'role', // 角色管理
-            element: LazyLoad(React.lazy(() => import('/src/pages/users/role/RoleList.jsx'))),
+            element: LazyLoad(React.lazy(() => import('/src/pages/users/role/Role.jsx'))),
           },
         ],
       },
@@ -47,11 +47,11 @@ export const RouteData = [
         children: [
           {
             path: 'menu', // 菜单管理
-            element: LazyLoad(React.lazy(() => import('/src/pages/system/menu/MenuList.jsx'))),
+            element: LazyLoad(React.lazy(() => import('/src/pages/system/menu/Menu.jsx'))),
           },
           {
             path: 'api', // 接口管理
-            element: LazyLoad(React.lazy(() => import('/src/pages/system/api/ApiList.jsx'))),
+            element: LazyLoad(React.lazy(() => import('/src/pages/system/api/Api.jsx'))),
           },
           {
             path: 'setting', // 服务配置

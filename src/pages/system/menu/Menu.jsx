@@ -1,8 +1,8 @@
 import React from 'react';
 
 // 菜单列表
-const MenuList = () => {
+const Menu = () => {
   return <>MenuList</>;
 };
 
-export default MenuList;
+export default Menu;

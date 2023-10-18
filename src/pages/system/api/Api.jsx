@@ -1,8 +1,8 @@
 import React from 'react';
 
 // 菜单列表
-const ApiList = () => {
+const Api = () => {
   return <>ApiList</>;
 };
 
-export default ApiList;
+export default Api;
