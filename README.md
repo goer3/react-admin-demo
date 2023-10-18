@@ -50,4 +50,4 @@ cnpm i moment
 
 ### 🎯 效果演示
 
-![屏幕截图](Screenshot/page.png)
+![屏幕截图](screenshot/page.png)
