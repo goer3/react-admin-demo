@@ -40,10 +40,6 @@ export const RouteData = [
             path: 'role', // 角色管理
             element: LazyLoad(React.lazy(() => import('/src/pages/users/role/RoleList.jsx'))),
           },
-          {
-            path: 'center', // 个人中心
-            element: LazyLoad(React.lazy(() => import('/src/pages/users/user/UserCenter.jsx'))),
-          },
         ],
       },
       {
@@ -62,6 +58,10 @@ export const RouteData = [
             element: LazyLoad(React.lazy(() => import('/src/pages/system/setting/Setting.jsx'))),
           },
         ],
+      },
+      {
+        path: 'me', // 个人中心
+        element: LazyLoad(React.lazy(() => import('/src/pages/users/user/UserCenter.jsx'))),
       },
       {
         path: 'help', // 帮助页

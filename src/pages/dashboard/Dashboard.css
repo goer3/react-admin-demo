@@ -1,0 +1,35 @@
+.admin-ph {
+    display: flex;
+    padding: 20px;
+    box-shadow: 0 2px 5px var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.admin-ph-left {
+    display: flex;
+    margin-right: auto;
+}
+
+.admin-ph-info {
+    height: 60px;
+    padding-left: 15px;
+}
+
+.admin-ph-welcome {
+    font-size: 18px;
+    font-weight: bold;
+    height: 35px;
+    line-height: 35px;
+}
+
+.admin-ph-desc {
+    color: rgba(0, 0, 0, .45);
+    height: 25px;
+    line-height: 25px;
+}
+
+.admin-ph-right {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+}

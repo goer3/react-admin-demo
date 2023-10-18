@@ -14,7 +14,6 @@
 
 <hr>
 
-
 ### 🤔 技术栈
 
 - [x] Vite：新型前端构建工具，能够显著提升前端开发体验。 [:octocat:](https://github.com/vitejs/vite)
@@ -25,17 +24,6 @@
 
 ### 🎯 依赖安装
 
-MiSans 字体引入：
-
-```html
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/misans@3.1.1/lib/misans-400-regular.min.css"
-/>
-```
-
-其它开发依赖：
-
 ```bash
 # 安装 cnpm
 npm i -g cnpm
@@ -43,6 +31,9 @@ npm i -g cnpm
 # 自动格式化代码
 cnpm i --save-dev --save-exact prettier
 cnpm i --save-dev @types/node 
+
+# 字体安装
+cnpm i misans
 
 # 基础开发依赖
 cnpm i antd@4.24.14

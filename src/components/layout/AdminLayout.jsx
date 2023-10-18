@@ -17,6 +17,7 @@ import {
 } from '@ant-design/icons';
 import { Avatar, Dropdown, Layout, Menu, Space } from 'antd';
 import { DefaultAvatar, Logo } from '../../utils/Resources.jsx';
+import './AdminAntd.css';
 import './AdminLayout.css';
 import { Outlet, useNavigate } from 'react-router';
 
@@ -94,7 +95,7 @@ const menus = [
     getItem('改密日志', '2003'),
     getItem('机器日志', '2004'),
   ]),
-  getItem('个人中心', '/users/center', <UserOutlined />),
+  getItem('个人中心', '/me', <UserOutlined />),
   getItem('获取帮助', '/help', <FileProtectOutlined />),
 ];
 
