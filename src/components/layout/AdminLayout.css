@@ -87,15 +87,18 @@
     background: var(--sider-bgcolor);
     height: calc(100vh - var(--header-height));
     grid-template-rows: 1fr;
-    /* border-right: 1px solid var(--border-color); */
-    /* box-shadow: 0 0 2px var(--border-color); */
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.admin-sider::-webkit-scrollbar {
+    width: 0 !important;
 }
 
 .admin-sider-menu {
     padding: 15px 0;
     background: var(--sider-bgcolor);
-    min-height: calc(100vh - var(--header-height));
-    /* border: none; */
 }
 
 .admin-sider-menu span {
@@ -116,7 +119,6 @@
     line-height: var(--header-height);
     background-color: var(--sider-bgcolor);
     border-top: 1px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
 }
 
 /* 收缩后弹出一级菜单样式 */
@@ -137,4 +139,5 @@
 .admin-content {
     background: #fff;
     margin-top: var(--header-height);
+    border-left: 1px solid var(--border-color);;
 }
