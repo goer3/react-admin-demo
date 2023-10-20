@@ -123,11 +123,6 @@
     content: '';
 }
 
-/* 下拉菜单位置 */
-.ant-dropdown {
-    top: 45px !important;
-}
-
 /* 侧边菜单栏 */
 .admin-sider {
     margin-top: var(--header-height);
@@ -229,4 +224,8 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+}
+
+.admin-tb-header button {
+    margin-left: 10px;
 }

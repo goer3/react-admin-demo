@@ -20,6 +20,7 @@ import { DefaultAvatar, Logo } from '../../utils/Resources.jsx';
 import './AdminAntd.css';
 import './AdminLayout.css';
 import { Outlet, useNavigate } from 'react-router';
+import { AdminDropdownIcon } from '../../pages/common/AdminIcon.jsx';
 
 const { Header, Sider, Content } = Layout;
 
@@ -149,8 +150,7 @@ const AdminLayout = () => {
               <a onClick={(e) => e.preventDefault()}>
                 <Space>
                   <Avatar className="admin-avatar" src={DefaultAvatar} />
-                  {/* <span style={{ marginRight: 10 }}>Jayce Kuang</span> */}
-                  <i className="ant-menu-submenu-arrow"></i>
+                  <AdminDropdownIcon />
                 </Space>
               </a>
             </Dropdown>

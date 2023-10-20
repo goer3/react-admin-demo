@@ -179,9 +179,9 @@
 
 /*按钮*/
 .ant-btn {
-    line-height: 0;
-    height: 25px;
-    padding: 4px 15px;
+    line-height: 26px;
+    height: 26px;
+    padding: 0 15px;
     font-size: 13px;
     border-radius: 0;
 }
@@ -202,7 +202,7 @@
     background: rgba(32, 44, 64);
 }
 
-.ant-btn-primary span {
+.ant-btn-primary * {
     color: #ffffff;
 }
 
