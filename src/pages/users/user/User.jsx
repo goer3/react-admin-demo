@@ -2,6 +2,7 @@ import React from 'react';
 import AdminPageHeader from '../../common/AdminPageHeader.jsx';
 import UserList from './UserList.jsx';
 import UserSearch from './UserSearch.jsx';
+import UserBtnGroup from "./UserBtnGroup.jsx";
 
 // 用户列表
 const User = () => {
@@ -25,6 +26,7 @@ const User = () => {
       <AdminPageHeader title={title} notices={notices} />
       <div className="admin-content-main">
         <UserSearch />
+        <UserBtnGroup />
         <UserList />
       </div>
     </div>

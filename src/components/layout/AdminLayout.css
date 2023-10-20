@@ -83,18 +83,20 @@
     content: '';
 }
 
+/*展开收起搜索框图标*/
 .admin-dropup-search {
     position: relative;
-    top: 10px;
-    padding: 0 15px 0 5px;
+    top: 12px;
+    padding: 0 15px;
 }
 
 .admin-dropdown-search {
     position: relative;
-    top: 15px;
-    padding: 0 15px 0 5px;
+    top: 17px;
+    padding: 0 15px;
 }
 
+/*下拉选项*/
 .admin-dropdown-select {
     position: relative;
     top: 1px;
@@ -226,4 +228,5 @@
 .admin-tb-header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }

@@ -48,12 +48,13 @@ const UserSearch = () => {
   };
 
   // 根据是否展开显示不同数量的搜索框，默认是 4
-  const count = searchExpand ? searchFields.length : 4;
+  const count = searchExpand ? searchFields.length : 3;
 
   // 提交按钮布局
-  let submitBtnSpan = 6;
-  if (count % 4 === 0) {
-    submitBtnSpan = 24;
+  let submitBtnSpan = count % 4 === 0 ? 24 : 6;
+  let submitBtnTextAlign = count % 4 === 0 ? 'right' : 'left';
+  if (count % 4 === 3) {
+    submitBtnTextAlign = 'right';
   }
 
   // 用于存储传递给表单的结构
@@ -123,39 +124,42 @@ const UserSearch = () => {
           <Col
             span={submitBtnSpan}
             style={{
-              textAlign: 'right',
+              textAlign: submitBtnTextAlign,
             }}>
-            <Button type="primary" htmlType="submit">
-              搜索用户
-            </Button>
-            <Button
-              style={{
-                margin: '0 8px',
-              }}
-              onClick={() => {
-                form.resetFields();
-              }}>
-              清除条件
-            </Button>
-            <a
-              style={{
-                fontSize: 12,
-              }}
-              onClick={() => {
-                setSearchExpand(!searchExpand);
-              }}>
-              {searchExpand ? (
-                <span>
-                  <AdminDropupIcon className="admin-dropup-search" />
-                  <span>收起更多</span>
-                </span>
-              ) : (
-                <span>
-                  <AdminDropdownIcon className="admin-dropdown-search" />
-                  <span>更多搜索</span>
-                </span>
+            <div className="admin-search-btn-group">
+              <Button type="primary" htmlType="submit">
+                搜索用户
+              </Button>
+              <Button
+                onClick={() => {
+                  form.resetFields();
+                }}>
+                清除条件
+              </Button>
+              {searchFields.length > 3 && (
+                <a
+                  style={{
+                    fontSize: 12,
+                    height: '28px',
+                    lineHeight: '28px',
+                  }}
+                  onClick={() => {
+                    setSearchExpand(!searchExpand);
+                  }}>
+                  {searchExpand ? (
+                    <span>
+                      <AdminDropupIcon className="admin-dropup-search" />
+                      <span>收起更多</span>
+                    </span>
+                  ) : (
+                    <span>
+                      <AdminDropdownIcon className="admin-dropdown-search" />
+                      <span>更多搜索</span>
+                    </span>
+                  )}
+                </a>
               )}
-            </a>
+            </div>
           </Col>
         </Row>
       </Form>
