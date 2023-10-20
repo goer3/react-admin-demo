@@ -15,7 +15,7 @@ import {
   TeamOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { Avatar, Dropdown, Layout, Menu, Space } from 'antd';
+import { Avatar, BackTop, Dropdown, Layout, Menu, Space } from 'antd';
 import { DefaultAvatar, Logo } from '../../utils/Resources.jsx';
 import './AdminAntd.css';
 import './AdminLayout.css';
@@ -182,6 +182,7 @@ const AdminLayout = () => {
           </Layout>
         </Layout>
       </Layout>
+      <BackTop />
     </>
   );
 };

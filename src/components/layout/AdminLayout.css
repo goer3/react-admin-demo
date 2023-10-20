@@ -11,6 +11,13 @@
     color: var(--menu-font-color);
 }
 
+/*加载中*/
+.admin-data-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
 /* 顶部菜单栏 */
 .admin-header {
     padding: 0 10px;
@@ -56,6 +63,38 @@
 }
 
 /* 下拉箭头 */
+.admin-dropup-icon::after {
+    transform: rotate(-45deg) translateX(-2.5px);
+    position: absolute;
+    width: 6px;
+    height: 1.5px;
+    background-color: currentcolor;
+    border-radius: 2px;
+    content: '';
+}
+
+.admin-dropup-icon::before {
+    transform: rotate(45deg) translateX(2.5px);
+    position: absolute;
+    width: 6px;
+    height: 1.5px;
+    background-color: currentcolor;
+    border-radius: 2px;
+    content: '';
+}
+
+.admin-dropup-search {
+    position: relative;
+    top: 10px;
+    padding: 0 15px 0 5px;
+}
+
+.admin-dropdown-search {
+    position: relative;
+    top: 15px;
+    padding: 0 15px 0 5px;
+}
+
 .admin-dropdown-icon::after {
     transform: rotate(45deg) translateX(-2.5px);
     position: absolute;
@@ -139,5 +178,46 @@
 .admin-content {
     background: #fff;
     margin-top: var(--header-height);
-    border-left: 1px solid var(--border-color);;
+    border-left: 1px solid var(--border-color);
+}
+
+.admin-content-main {
+    padding: 20px;
+}
+
+/*主体 PageHeader*/
+.admin-ph-common {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px var(--border-color);
+}
+
+.admin-ph-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.admin-ph-notice {
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--border-color);
+}
+
+.admin-ph-notice * {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.7) !important;
+    letter-spacing: 1px;
+    line-height: 20px;
+}
+
+.admin-ph-notice ol {
+    margin-bottom: 0;
+    padding-inline-start: 30px;
+}
+
+/*列表*/
+.admin-tb-header {
+    display: flex;
+    justify-content: space-between;
 }

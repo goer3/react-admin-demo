@@ -128,3 +128,68 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+/*输入框*/
+.ant-input {
+    padding: 3px 10px;
+    font-size: 12px;
+    line-height: 20px;
+    border-radius: 0;
+}
+
+/*下拉输入框*/
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-radius: 0;
+    height: 27px;
+    padding: 0 11px;
+}
+
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
+    height: 27px;
+}
+
+.ant-select-single .ant-select-selector .ant-select-selection-item, .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+    line-height: 27px;
+    font-size: 12px;
+}
+
+.ant-select-item {
+    min-height: 20px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+/*按钮*/
+.ant-btn {
+    line-height: 0;
+    height: 25px;
+    padding: 4px 15px;
+    font-size: 13px;
+    border-radius: 0;
+}
+
+/*.ant-btn:active {*/
+/*    color: rgba(32, 44, 64);*/
+/*    border-color: rgba(32, 44, 64);*/
+/*}*/
+
+.ant-btn-primary {
+    border-color: rgba(32, 44, 64);
+    background-color: rgba(32, 44, 64);
+}
+
+.ant-btn-primary:hover, .ant-btn-primary:focus {
+    color: #fff;
+    border-color: rgba(32, 44, 64);
+    background: rgba(32, 44, 64);
+}
+
+.ant-btn-primary span {
+    color: #ffffff;
+}
+
+
+.atn-primary {
+
+}

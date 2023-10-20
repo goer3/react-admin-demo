@@ -29,37 +29,45 @@ const DashboardHeader = () => {
   // 问候语
   let hello = generateHelloWord('吴彦祖');
 
+  // 面包屑
+  const items = [
+    { label: '菜单项一', key: 'item-1' },
+    { label: '菜单项二', key: 'item-2' },
+  ];
+
   return (
-    <div className="admin-ph">
-      <div className="admin-ph-left">
-        <div className="admin-ph-avatar">
-          <Avatar src={DefaultAvatar} size={60} />
-        </div>
-        <div className="admin-ph-info">
-          <div className="admin-ph-welcome">{hello}</div>
-          <div className="admin-ph-desc">
-            高级运维工程师 | 深圳运维集团 － 产品研发中心 － 运维组 － DevOPS 团队
+    <>
+      <div className="admin-ph">
+        <div className="admin-ph-left">
+          <div className="admin-ph-avatar">
+            <Avatar src={DefaultAvatar} size={60} />
+          </div>
+          <div className="admin-ph-info">
+            <div className="admin-ph-welcome">{hello}</div>
+            <div className="admin-ph-desc">
+              高级运维工程师 | 深圳运维集团 － 产品研发中心 － 运维组 － DevOPS 团队
+            </div>
           </div>
         </div>
+        <div className="admin-ph-right">
+          <Statistic
+            title="用户数量"
+            value={1024}
+            style={{
+              marginRight: 30,
+            }}
+          />
+          <Statistic
+            title="入职天数"
+            value={65535}
+            style={{
+              marginRight: 30,
+            }}
+          />
+          <Statistic title="任务数量" value={16384} />
+        </div>
       </div>
-      <div className="admin-ph-right">
-        <Statistic
-          title="用户数量"
-          value={1024}
-          style={{
-            marginRight: 30,
-          }}
-        />
-        <Statistic
-          title="入职天数"
-          value={65535}
-          style={{
-            marginRight: 30,
-          }}
-        />
-        <Statistic title="任务数量" value={16384} />
-      </div>
-    </div>
+    </>
   );
 };
 
