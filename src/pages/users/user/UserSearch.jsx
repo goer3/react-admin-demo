@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Col, Form, Input, Row, Select } from 'antd';
+import { AdminDropdownIcon, AdminDropupIcon } from '../../common/AdminIcon.jsx';
 
 const { Option } = Select;
 
@@ -13,64 +14,26 @@ const formItemLayout = {
   },
 };
 
-// 搜索框布局宽度
-const searchFiledSpan = 6;
-
-// 搜索框
-const allSearchFiled = [
-  <Col span={searchFiledSpan} key="username">
-    <Form.Item name="username" label="用户名">
-      <Input placeholder="通过用户名检索用户" />
-    </Form.Item>
-  </Col>,
-  <Col span={searchFiledSpan} key="name">
-    <Form.Item name="name" label="姓名">
-      <Input placeholder="通过姓名检索用户" />
-    </Form.Item>
-  </Col>,
-  <Col span={searchFiledSpan} key="email">
-    <Form.Item name="email" label="邮箱">
-      <Input placeholder="通过邮箱检索用户" />
-    </Form.Item>
-  </Col>,
-  <Col span={searchFiledSpan} key="mobile">
-    <Form.Item name="mobile" label="手机号码">
-      <Input placeholder="通过手机号码检索用户" />
-    </Form.Item>
-  </Col>,
-  <Col span={searchFiledSpan} key="gender">
-    <Form.Item name="gender" label="性别">
-      <Select>
-        <Option value="1">1</Option>
-        <Option value="2">2</Option>
-      </Select>
-    </Form.Item>
-  </Col>,
-  <Col span={searchFiledSpan} key="status">
-    <Form.Item name="status" label="状态">
-      <Select>
-        <Option value="1">1</Option>
-        <Option value="2">2</Option>
-      </Select>
-    </Form.Item>
-  </Col>,
-  <Col span={searchFiledSpan} key="address">
-    <Form.Item name="address" label="办公地点">
-      <Input placeholder="通过办公地点检索用户" />
-    </Form.Item>
-  </Col>,
-  <Col span={searchFiledSpan} key="job">
-    <Form.Item name="job" label="职位">
-      <Input placeholder="通过职位检索用户" />
-    </Form.Item>
-  </Col>,
+// 可供搜索的字段
+const searchFields = [
+  { name: 'username', label: '用户名', type: 'text' },
+  { name: 'name', label: '姓名', type: 'text' },
+  { name: 'mobile', label: '手机号', type: 'text' },
+  { name: 'email', label: '邮箱', type: 'text' },
+  { name: 'job_number', label: '工号', type: 'text' },
+  { name: 'system_role_id', label: '角色', type: 'select' },
+  { name: 'job_name', label: '岗位名称', type: 'text' },
+  { name: 'system_department_id', label: '部门名称', type: 'select' },
+  { name: 'native_province_id', label: '籍贯省份', type: 'select' },
+  { name: 'native_city_id', label: '籍贯城市', type: 'select' },
+  { name: 'active', label: '激活状态', type: 'select' },
+  { name: 'unlocked', label: '锁定状态', type: 'select' },
+  { name: 'gender', label: '性别', type: 'select' },
+  { name: 'creator', label: '创建人', type: 'text' },
+  { name: 'office_province_id', label: '办公省份', type: 'select' },
+  { name: 'office_city_id', label: '办公城市', type: 'select' },
+  { name: 'office_address', label: '办公地点', type: 'text' },
 ];
-
-// 所有搜索框数量
-const searchFiledCount = allSearchFiled.length;
-
-// 默认显示搜索框数量
-const defaultSearchFiledCount = 4;
 
 // 用户搜索
 const UserSearch = () => {
@@ -84,24 +47,81 @@ const UserSearch = () => {
     console.log('提交数据: ', values);
   };
 
-  // 生成搜索表单
-  const getSearchFiled = () => {
-    // 根据是否展开显示不同数量的搜索框
-    const count = searchExpand ? searchFiledCount : defaultSearchFiledCount;
-    if (searchExpand) {
-      return allSearchFiled;
-    } else {
-      return allSearchFiled.slice(0, count);
+  // 根据是否展开显示不同数量的搜索框，默认是 4
+  const count = searchExpand ? searchFields.length : 4;
+
+  // 提交按钮布局
+  let submitBtnSpan = 6;
+  if (count % 4 === 0) {
+    submitBtnSpan = 24;
+  }
+
+  // 用于存储传递给表单的结构
+  const searchChildren = [];
+
+  // 遍历生成搜索框数据
+  for (let i = 0; i < count; i++) {
+    // 每项数据和唯一的 Key
+    let item = searchFields[i];
+
+    // 输入提示信息，Placeholder
+    let tp = '通过输入' + item.label + '进行搜索';
+    let sp = '通过选择' + item.label + '进行搜索';
+
+    // 默认模板
+    let ele = <Input placeholder={tp} />;
+
+    // 输入框格式
+    if (item.type === 'select') {
+      switch (item.name) {
+        case 'system_role_id':
+          ele = (
+            <Select
+              initialvalues="1"
+              placeholder={sp}
+              suffixIcon={<AdminDropdownIcon className="admin-dropdown-select" />}>
+              <Option value="1">管理员</Option>
+              <Option value="2">普通用户</Option>
+              <Option value="3">访客</Option>
+            </Select>
+          );
+          break;
+        default:
+          ele = (
+            <Select
+              initialvalues="1"
+              placeholder={sp}
+              suffixIcon={<AdminDropdownIcon className="admin-dropdown-select" />}>
+              <Option value="1">1</Option>
+              <Option value="2">2</Option>
+              <Option value="3">3</Option>
+            </Select>
+          );
+          break;
+      }
     }
-  };
+
+    searchChildren.push(
+      <Col span={6} key={item.name}>
+        <Form.Item
+          name={item.name}
+          label={item.label}
+          colon={false}
+          labelCol={{ span: 6 }}
+          wrapperCol={{ span: 18 }}>
+          {ele}
+        </Form.Item>
+      </Col>,
+    );
+  }
 
   return (
     <>
       <Form form={form} name="user_search" onFinish={onFinish} {...formItemLayout}>
-        <Row gutter={24}>{getSearchFiled()}</Row>
         <Row gutter={24}>
+          {searchChildren}
           <Col
-            span={24}
+            span={submitBtnSpan}
             style={{
               textAlign: 'right',
             }}>
@@ -126,13 +146,13 @@ const UserSearch = () => {
               }}>
               {searchExpand ? (
                 <span>
-                  <i className="admin-dropup-icon admin-dropup-search"></i>
+                  <AdminDropupIcon className="admin-dropup-search" />
                   <span>收起更多</span>
                 </span>
               ) : (
                 <span>
-                  <i className="admin-dropdown-icon admin-dropdown-search"></i>
-                  <span>展开更多</span>
+                  <AdminDropdownIcon className="admin-dropdown-search" />
+                  <span>更多搜索</span>
                 </span>
               )}
             </a>

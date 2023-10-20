@@ -150,7 +150,7 @@ const AdminLayout = () => {
                 <Space>
                   <Avatar className="admin-avatar" src={DefaultAvatar} />
                   {/* <span style={{ marginRight: 10 }}>Jayce Kuang</span> */}
-                  <i className="admin-dropdown-icon"></i>
+                  <i className="ant-menu-submenu-arrow"></i>
                 </Space>
               </a>
             </Dropdown>
