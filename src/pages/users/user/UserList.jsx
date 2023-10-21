@@ -142,14 +142,32 @@ const columns = [
     title: '操作',
     dataIndex: 'action',
     key: 'action',
-    render: (_, {}) => {
+    render: (_, { status }) => {
       return (
         <>
-          <Button className="admin-tb-action-btn">详情</Button>
-          <Button type="primary" className="admin-tb-action-btn">
-            编辑
-          </Button>
-          <Button type="danger" className="admin-tb-action-btn">
+          <Button className="admin-action-btn">详情</Button>
+          <Button className="admin-action-btn admin-blue-btn">编辑</Button>
+          {status === 0 && (
+            <Button type="primary" className="admin-action-btn">
+              禁用
+            </Button>
+          )}
+          {status === 1 && (
+            <Button type="primary" className="admin-action-btn">
+              激活
+            </Button>
+          )}
+          {status === 2 && (
+            <Button type="primary" className="admin-action-btn">
+              解锁
+            </Button>
+          )}
+          {status === 3 && (
+            <Button type="primary" className="admin-action-btn">
+              启用
+            </Button>
+          )}
+          <Button type="danger" className="admin-action-btn">
             删除
           </Button>
         </>

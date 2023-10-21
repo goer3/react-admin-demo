@@ -230,7 +230,7 @@
     margin-left: 10px;
 }
 
-.admin-tb-action-btn {
+.admin-action-btn {
     margin-right: 10px;
     height: 20px;
     line-height: 20px;
@@ -239,6 +239,68 @@
     letter-spacing: 1px;
 }
 
-.admin-tb-action-btn:last-child {
+.admin-action-btn:last-child {
     margin-right: 0;
 }
+
+/*按钮*/
+.admin-blue-btn,
+.admin-blue-btn:active,
+.admin-blue-btn:hover,
+.admin-blue-btn:focus {
+    border-color: #40a9ff;
+    background: #1890ff;
+}
+
+.admin-blue-btn * {
+    color: #fff;
+}
+
+.admin-green-btn,
+.admin-green-btn:active,
+.admin-green-btn:hover,
+.admin-green-btn:focus {
+    background: #f6ffed;
+    border-color: #b7eb8f;
+}
+
+.admin-green-btn * {
+    color: #389e0d;
+}
+
+.admin-gold-btn,
+.admin-gold-btn:active,
+.admin-gold-btn:hover,
+.admin-gold-btn:focus {
+    background: #fffbe6;
+    border-color: #ffe58f;
+}
+
+.admin-gold-btn * {
+    color: #d48806;
+}
+
+.admin-volcano-btn,
+.admin-volcano-btn:active,
+.admin-volcano-btn:hover,
+.admin-volcano-btn:focus {
+    background: #fff2e8;
+    border-color: #ffbb96;
+}
+
+.admin-volcano-btn * {
+    color: #d4380d;
+}
+
+.admin-red-btn,
+.admin-red-btn:active,
+.admin-red-btn:hover,
+.admin-red-btn:focus {
+    background: #fff1f0;
+    border-color: #ffa39e;
+}
+
+.admin-red-btn * {
+    color: #cf1322;
+}
+

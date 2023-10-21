@@ -1,5 +1,5 @@
 :root {
-    --input-height: 28px;
+    --input-height: 25px;
 }
 
 /* 重写 antd 样式 */
@@ -135,9 +135,9 @@
 
 /*输入框*/
 .ant-input {
-    padding: 3px 10px;
+    padding: 0 10px;
     font-size: 12px;
-    line-height: 20px;
+    line-height: 24px;
     border-radius: 0;
 }
 
@@ -179,8 +179,8 @@
 
 /*按钮*/
 .ant-btn {
-    line-height: 26px;
-    height: 26px;
+    line-height: 25px;
+    height: 25px;
     padding: 0 15px;
     font-size: 13px;
     border-radius: 0;
@@ -191,7 +191,10 @@
 /*    border-color: rgba(32, 44, 64);*/
 /*}*/
 
-.ant-btn-primary {
+.ant-btn-primary,
+.ant-btn-danger:active,
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
     border-color: rgba(32, 44, 64);
     background: rgba(32, 44, 64);
 }
@@ -200,34 +203,16 @@
     color: #ffffff;
 }
 
-.ant-btn-danger:active {
-    border-color: rgba(32, 44, 64);
-    background: rgba(32, 44, 64);
-}
-
-.ant-btn-primary:hover, .ant-btn-primary:focus {
-    color: #fff;
-    border-color: rgba(32, 44, 64);
-    background: rgba(32, 44, 64);
-}
-
-.ant-btn-danger {
+.ant-btn-danger,
+.ant-btn-danger:active,
+.ant-btn-danger:hover,
+.ant-btn-danger:focus {
     background: #c41d7f;
     border-color: #c41d7f;
 }
 
 .ant-btn-danger * {
     color: #ffffff;
-}
-
-.ant-btn-danger:active {
-    border-color: #c41d7f;
-    background: #c41d7f;
-}
-
-.ant-btn-danger:hover, .ant-btn-danger:focus {
-    border-color: #c41d7f;
-    background: #c41d7f;
 }
 
 .admin-search-btn-group {

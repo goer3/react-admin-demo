@@ -6,16 +6,28 @@ import {DownloadOutlined, DownOutlined, FileExcelOutlined, UploadOutlined, UserA
 const UserBtnGroup = () => {
   const items = [
     {
-      label: '禁用选中用户',
+      label: '激活选中用户',
       key: '1',
     },
     {
-      label: '启用选中用户',
+      label: '禁用选中用户',
       key: '2',
     },
     {
-      label: '删除选中用户',
+      label: '启用选中用户',
       key: '3',
+    },
+    {
+      label: '锁定选中用户',
+      key: '4',
+    },
+    {
+      label: '解锁选中用户',
+      key: '5',
+    },
+    {
+      label: '删除选中用户',
+      key: '6',
     },
   ];
 
