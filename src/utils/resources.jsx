@@ -1,4 +1,4 @@
-import Logo from '../assets/images/logo-03.png';
+import Logo from '../assets/images/logo-01.png';
 import DefaultAvatar from '../assets/images/avatar.jpg';
 
 // 图片导出

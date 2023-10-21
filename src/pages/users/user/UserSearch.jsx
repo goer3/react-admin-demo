@@ -16,7 +16,7 @@ const formItemLayout = {
 
 // 可供搜索的字段
 const searchFields = [
-  { name: 'username', label: '用户名', type: 'text' },
+  // { name: 'username', label: '用户名', type: 'text' },
   { name: 'name', label: '姓名', type: 'text' },
   { name: 'mobile', label: '手机号', type: 'text' },
   { name: 'email', label: '邮箱', type: 'text' },
@@ -26,7 +26,7 @@ const searchFields = [
   { name: 'system_department_id', label: '部门名称', type: 'select' },
   { name: 'native_province_id', label: '籍贯省份', type: 'select' },
   { name: 'native_city_id', label: '籍贯城市', type: 'select' },
-  { name: 'active', label: '激活状态', type: 'select' },
+  // { name: 'active', label: '激活状态', type: 'select' },
   { name: 'unlocked', label: '锁定状态', type: 'select' },
   { name: 'gender', label: '性别', type: 'select' },
   { name: 'creator', label: '创建人', type: 'text' },

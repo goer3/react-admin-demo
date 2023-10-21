@@ -193,7 +193,16 @@
 
 .ant-btn-primary {
     border-color: rgba(32, 44, 64);
-    background-color: rgba(32, 44, 64);
+    background: rgba(32, 44, 64);
+}
+
+.ant-btn-primary * {
+    color: #ffffff;
+}
+
+.ant-btn-danger:active {
+    border-color: rgba(32, 44, 64);
+    background: rgba(32, 44, 64);
 }
 
 .ant-btn-primary:hover, .ant-btn-primary:focus {
@@ -202,8 +211,23 @@
     background: rgba(32, 44, 64);
 }
 
-.ant-btn-primary * {
+.ant-btn-danger {
+    background: #c41d7f;
+    border-color: #c41d7f;
+}
+
+.ant-btn-danger * {
     color: #ffffff;
+}
+
+.ant-btn-danger:active {
+    border-color: #c41d7f;
+    background: #c41d7f;
+}
+
+.ant-btn-danger:hover, .ant-btn-danger:focus {
+    border-color: #c41d7f;
+    background: #c41d7f;
 }
 
 .admin-search-btn-group {
@@ -214,4 +238,20 @@
 
 .admin-search-btn-group button {
     margin-left: 10px;
+}
+
+/*表格*/
+.admin-tb .ant-table-thead > tr > th {
+    border-top: 1px solid #f0f0f0;
+}
+
+/*标签*/
+.ant-tag {
+    border-radius: 0;
+    border: none;
+}
+
+/*选择*/
+.ant-checkbox-inner {
+    border-radius: 0;
 }

@@ -12,7 +12,9 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
-        modifyVars: {},
+        modifyVars: {
+          'primary-color': 'rgba(32, 44, 64)',
+        },
         javascriptEnabled: true,
       },
     },

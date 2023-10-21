@@ -40,8 +40,8 @@
 }
 
 .admin-logo {
-    padding: 10px;
-    height: 50px;
+    /*padding: 10px;*/
+    height: 25px;
     user-select: none;
 }
 
@@ -55,7 +55,7 @@
 .admin-avatar {
     height: var(--header-height);
     width: var(--header-height);
-    padding: 10px;
+    padding: 12px;
 }
 
 .admin-avatar img {
@@ -228,4 +228,17 @@
 
 .admin-tb-header button {
     margin-left: 10px;
+}
+
+.admin-tb-action-btn {
+    margin-right: 10px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    padding: 0 8px;
+    letter-spacing: 1px;
+}
+
+.admin-tb-action-btn:last-child {
+    margin-right: 0;
 }
