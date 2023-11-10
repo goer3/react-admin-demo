@@ -248,8 +248,10 @@
 .admin-blue-btn:active,
 .admin-blue-btn:hover,
 .admin-blue-btn:focus {
-    border-color: #40a9ff;
-    background: #1890ff;
+    /*border-color: #40a9ff;*/
+    /*background: #1890ff;*/
+    border-color: #0052d9;
+    background: #0052d9;
 }
 
 .admin-blue-btn * {

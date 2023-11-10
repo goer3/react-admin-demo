@@ -80,12 +80,12 @@ const menus = [
     getItem('应用列表', '612'),
   ]),
   getItem('用户中心', '/users', <TeamOutlined />, [
-    getItem('部门管理', '/users/department'),
     getItem('用户管理', '/users/user'),
     getItem('分组管理', '/users/group'),
     getItem('角色管理', '/users/role'),
   ]),
   getItem('系统配置', '/system', <SettingOutlined />, [
+    getItem('部门管理', '/system/department'),
     getItem('菜单管理', '/system/menu'),
     getItem('接口管理', '/system/api'),
     getItem('服务配置', '/system/setting'),
